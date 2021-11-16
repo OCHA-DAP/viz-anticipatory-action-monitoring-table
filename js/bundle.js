@@ -1,3 +1,31 @@
+window.$ = window.jQuery = require('jquery');
+function hxlProxyToJSON(input){
+    var output = [];
+    var keys=[]
+    input.forEach(function(e,i){
+        if(i==0){
+            e.forEach(function(e2,i2){
+                var parts = e2.split('+');
+                var key = parts[0]
+                if(parts.length>1){
+                    var atts = parts.splice(1,parts.length);
+                    atts.sort();                    
+                    atts.forEach(function(att){
+                        key +='+'+att
+                    });
+                }
+                keys.push(key);
+            });
+        } else {
+            var row = {};
+            e.forEach(function(e2,i2){
+                row[keys[i2]] = e2;
+            });
+            output.push(row);
+        }
+    });
+    return output;
+}
 $( document ).ready(function() {
   const DATA_URL = 'https://proxy.hxlstandard.org/data.objects.json?dest=data_edit&strip-headers=on&force=on&header-row=1&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vSuwMFCg_aLAghw4CzGeL5xpGimXi4k4dFmqpvlIAt4wzZYU8GnmRANLT6dHOZwe0FpFmQ4r_Bd7iyy%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dcsv';
   let isMobile = $(window).width()<600? true : false;
