@@ -26,30 +26,31 @@ main {
 	flex: 1;
 }
 
-footer {
-	background-color: #353535;
-	color: #FFF;
-	padding: 20px 0 10px;
-}
 
-.logos {
-	img {
-		margin-right: 40px;
-		margin-bottom: 0;
-		vertical-align: top;
-		width: auto;
+table { 
+	width: 100%; 
+	border-collapse: collapse; 
+}
+td, th { 
+	padding: 6px; 
+	text-align: left; 
+}
+th {	
+  font-family: 'Gotham-Bold';
+	border-bottom: 2px solid #333;
+	&.monthHeader {
+		text-align: center;
+	}
+}
+td {
+	border-bottom: 1px solid #EEE;
+	text-transform: capitalize;
+	&.bg {
+		background-color: #FBD1CE;
 	}
 }
 
 
 @media only screen and (max-width: 767px) {
-	.logos {
-		.grid-container > div {
-			padding: 0;
-			text-align: center;
-		}
-		img {
-			margin: 10px;
-		}
-	}
+
 }
