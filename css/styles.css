@@ -1092,11 +1092,23 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
   margin: 0;
   padding: 0; }
 
 main {
   flex: 1; }
+
+.legend {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  margin: 15px 25px; }
+  .legend .key {
+    background-color: #FBD1CE;
+    height: 14px;
+    margin-right: 5px;
+    width: 14px; }
 
 table {
   width: 100%;
