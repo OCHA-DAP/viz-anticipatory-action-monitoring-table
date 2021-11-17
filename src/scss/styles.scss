@@ -16,8 +16,9 @@ html, body {
 
 body {
  	display: flex;
-  	flex-direction: column;
+  flex-direction: column;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
 	margin: 0;
 	padding: 0;
 }
@@ -26,6 +27,18 @@ main {
 	flex: 1;
 }
 
+.legend {
+	align-items: center;
+	display: flex;
+	font-size: 12px;
+	margin: 15px 25px;
+	.key {
+		background-color: #FBD1CE;
+		height: 14px;
+		margin-right: 5px;
+		width: 14px;
+	}
+}
 
 table { 
 	width: 100%; 
@@ -38,6 +51,9 @@ td, th {
 th {	
   font-family: 'Gotham-Bold';
 	border-bottom: 2px solid #333;
+	&.header {
+		width: 20%;
+	}
 	&.monthHeader {
 		text-align: center;
 	}
