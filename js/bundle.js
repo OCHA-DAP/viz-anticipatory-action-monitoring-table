@@ -65,7 +65,7 @@ $( document ).ready(function() {
          .data(columns).enter()
          .append('th')
          .attr('class', function(d) {
-            let thClass = (d!=='Country' && d!=='Shock') ? 'monthHeader' : '';
+            let thClass = (d!=='Country' && d!=='Shock') ? 'monthHeader' : 'header';
             return thClass;
          })
          .text(function (d) {

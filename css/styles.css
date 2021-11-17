@@ -1121,6 +1121,8 @@ td, th {
 th {
   font-family: 'Gotham-Bold';
   border-bottom: 2px solid #333; }
+  th.header {
+    width: 20%; }
   th.monthHeader {
     text-align: center; }
 
