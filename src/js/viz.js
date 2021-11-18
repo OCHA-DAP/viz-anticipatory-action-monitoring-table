@@ -7,7 +7,9 @@ $( document ).ready(function() {
     d3.json(DATA_URL).then(function(data) {
       const columns = ['Country', 'Shock', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       
-      //console.log(data)
+      data = data.sort((a, b) => (a['#country+name'] > b['#country+name']) ? 1 : -1)
+
+      console.log(data)
       let items = [];
       for (const item of data) {
         let obj = {};
@@ -51,7 +53,6 @@ $( document ).ready(function() {
       rows.selectAll('td')
         .data(function (d) {
           return columns.map(function (col) {
-            //console.log(k)
             return { 'name': col, 'value': d[col] };
           });
         }).enter()
@@ -72,10 +73,6 @@ $( document ).ready(function() {
           }
         });
     });
-  }
-
-  function createTable() {
-
   }
 
   function initTracking() {
