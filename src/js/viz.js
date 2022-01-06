@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  const DATA_URL = 'https://proxy.hxlstandard.org/data.objects.json?dest=data_edit&strip-headers=on&force=on&header-row=1&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vSuwMFCg_aLAghw4CzGeL5xpGimXi4k4dFmqpvlIAt4wzZYU8GnmRANLT6dHOZwe0FpFmQ4r_Bd7iyy%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dcsv';
+  const DATA_URL = 'https://proxy.hxlstandard.org/data.objects.json?dest=data_edit&strip-headers=on&header-row=1&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vSuwMFCg_aLAghw4CzGeL5xpGimXi4k4dFmqpvlIAt4wzZYU8GnmRANLT6dHOZwe0FpFmQ4r_Bd7iyy%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dcsv';
   let isMobile = $(window).width()<600? true : false;
 
   function getData() {
@@ -33,6 +33,8 @@ $( document ).ready(function() {
         items.push(obj);
       }
 
+      console.log(items);
+      
       let table = d3.select('.table-container').append('table');
       let headers = table.append('thead').append('tr')
          .selectAll('th')
